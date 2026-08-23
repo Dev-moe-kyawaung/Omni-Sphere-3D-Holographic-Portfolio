@@ -1,0 +1,320 @@
+/* ============================================
+   3D SPHERES & ARCHITECTURE VISUALIZATION
+   ============================================ */
+
+/* Architecture Spheres Container */
+.architecture-diagram {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.arch-sphere-container {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    transform-style: preserve-3d;
+    animation: container-rotate 20s linear infinite;
+}
+
+@keyframes container-rotate {
+    0% {
+        transform: rotateY(0deg) rotateX(10deg);
+    }
+    100% {
+        transform: rotateY(360deg) rotateX(10deg);
+    }
+}
+
+/* Individual Architecture Spheres */
+.arch-sphere {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-normal);
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.arch-sphere.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Presentation Layer (Outer) */
+.layer-presentation {
+    width: 500px;
+    height: 500px;
+    top: 50px;
+    left: 50px;
+    background: radial-gradient(
+        circle at 30% 30%,
+        rgba(0, 255, 255, 0.15) 0%,
+        rgba(0, 102, 255, 0.1) 50%,
+        rgba(157, 78, 221, 0.05) 100%
+    );
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 
+        0 0 60px rgba(0, 255, 255, 0.2),
+        inset 0 0 60px rgba(0, 255, 255, 0.1);
+    z-index: 1;
+}
+
+/* Domain Layer (Middle) */
+.layer-domain {
+    width: 350px;
+    height: 350px;
+    top: 125px;
+    left: 125px;
+    background: radial-gradient(
+        circle at 30% 30%,
+        rgba(255, 0, 255, 0.2) 0%,
+        rgba(157, 78, 221, 0.15) 50%,
+        rgba(0, 102, 255, 0.1) 100%
+    );
+    border: 2px solid rgba(255, 0, 255, 0.4);
+    box-shadow: 
+        0 0 40px rgba(255, 0, 255, 0.3),
+        inset 0 0 40px rgba(255, 0, 255, 0.15);
+    z-index: 2;
+}
+
+/* Data Layer (Inner) */
+.layer-data {
+    width: 200px;
+    height: 200px;
+    top: 200px;
+    left: 200px;
+    background: radial-gradient(
+        circle at 30% 30%,
+        rgba(157, 78, 221, 0.25) 0%,
+        rgba(255, 0, 255, 0.2) 50%,
+        rgba(0, 255, 255, 0.15) 100%
+    );
+    border: 2px solid rgba(157, 78, 221, 0.5);
+    box-shadow: 
+        0 0 30px rgba(157, 78, 221, 0.4),
+        inset 0 0 30px rgba(157, 78, 221, 0.2);
+    z-index: 3;
+}
+
+.sphere-label {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--primary-cyan);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--primary-cyan);
+}
+
+.sphere-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.sphere-content i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-magenta);
+}
+
+/* Architecture Explanation Panel */
+.architecture-explanation {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 350px;
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.architecture-explanation h4 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--primary-cyan);
+    margin-bottom: 1.5rem;
+}
+
+.arch-principles {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.principle-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.principle-item i {
+    color: var(--neon-green);
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+.principle-item strong {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.principle-item span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Responsive Architecture */
+@media (max-width: 1024px) {
+    .architecture-diagram {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .arch-sphere-container {
+        width: 400px;
+        height: 400px;
+        margin: 2rem auto;
+    }
+    
+    .layer-presentation {
+        width: 350px;
+        height: 350px;
+        top: 25px;
+        left: 25px;
+    }
+    
+    .layer-domain {
+        width: 250px;
+        height: 250px;
+        top: 75px;
+        left: 75px;
+    }
+    
+    .layer-data {
+        width: 150px;
+        height: 150px;
+        top: 125px;
+        left: 125px;
+    }
+    
+    .architecture-explanation {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .arch-sphere-container {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .layer-presentation {
+        width: 260px;
+        height: 260px;
+        top: 20px;
+        left: 20px;
+    }
+    
+    .layer-domain {
+        width: 180px;
+        height: 180px;
+        top: 60px;
+        left: 60px;
+    }
+    
+    .layer-data {
+        width: 100px;
+        height: 100px;
+        top: 100px;
+        left: 100px;
+    }
+    
+    .sphere-label {
+        font-size: 0.9rem;
+    }
+    
+    .sphere-content {
+        font-size: 0.75rem;
+    }
+}
+
+/* Orbit Animation */
+.orbit-ring {
+    position: absolute;
+    border: 1px dashed rgba(0, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: orbit-spin 30s linear infinite;
+}
+
+.orbit-1 {
+    width: 400px;
+    height: 400px;
+    top: 100px;
+    left: 100px;
+}
+
+.orbit-2 {
+    width: 300px;
+    height: 300px;
+    top: 150px;
+    left: 150px;
+}
+
+@keyframes orbit-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Satellite Nodes */
+.satellite-node {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: var(--bg-card);
+    border: 2px solid var(--primary-cyan);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+    animation: node-orbit 10s linear infinite;
+}
+
+@keyframes node-orbit {
+    0% {
+        transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+
+.satellite-node i {
+    color: var(--primary-cyan);
+    font-size: 1.2rem;
+}
