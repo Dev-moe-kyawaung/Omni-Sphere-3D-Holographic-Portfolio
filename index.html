@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Omni-Sphere 3D Holographic Portfolio - Senior Android Developer Moe Kyaw Aung">
+    <meta name="keywords" content="Android Developer, Kotlin, Jetpack Compose, Myanmar, Senior Developer, 3D Portfolio">
+    <meta name="author" content="Moe Kyaw Aung">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Moe Kyaw Aung | Senior Android Developer">
+    <meta property="og:description" content="Omni-Sphere 3D Holographic Portfolio with 30 Sections">
+    <meta property="og:image" content="https://res.cloudinary.com/dye5qpwii/image/upload/v1778527878/IMG_20260430_053105_uef0yr.png">
+    <meta property="og:url" content="https://dev-moe-kyawaung.github.io/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795825/cloud-icon-poster-1_2_opl7sy.png">
+    
+    <title>🌐 Omni-Sphere | Moe Kyaw Aung - Senior Android Developer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Padauk:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Three.js for 3D Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Main Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/hologram.css">
+    <link rel="stylesheet" href="css/spheres.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Theme Stylesheets -->
+    <link rel="stylesheet" href="css/themes/cyberpunk.css" id="theme-style">
+    
+    <!-- Burmese Language Support -->
+    <link rel="stylesheet" href="css/themes/burmese-theme.css">
+</head>
+<body class="cyberpunk-theme">
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="sphere-loader">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-core">
+                <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795825/cloud-icon-poster-1_2_opl7sy.png" alt="Loading">
+            </div>
+        </div>
+        <div class="loading-text">INITIALIZING OMNI-SPHERE...</div>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <nav class="nav-bar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-sphere">
+                    <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778527878/IMG_20260430_053105_uef0yr.png" alt="Moe Kyaw Aung">
+                </div>
+                <div class="logo-text">
+                    <h3>MOE KYAW AUNG</h3>
+                    <span>Senior Android Developer</span>
+                </div>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#hero" class="nav-link active">Hero</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#android-roadmap" class="nav-link">Roadmap</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                <li><a href="#compose" class="nav-link">Compose</a></li>
+                <li><a href="#ai-assistant" class="nav-link">AI</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="lang-toggle" id="lang-toggle" title="Toggle Language">
+                    <span class="lang-current">EN</span>
+                    <span class="lang-alt">မြန်</span>
+                </button>
+                <button class="menu-toggle" id="menu-toggle">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content Container -->
+    <main class="main-content">
+        
+        <!-- SECTION 1: HERO - 3D Holographic Sphere -->
+        <section id="hero" class="section hero-section active">
+            <div class="hero-container">
+                <div class="hero-background">
+                    <div id="particles-hero"></div>
+                    <video class="hero-video-bg" autoplay muted loop>
+                        <source src="https://res.cloudinary.com/dye5qpwii/video/upload/v1779031596/Javier_Pardina_10_wttux4.mp4" type="video/mp4">
+                    </video>
+                    <div class="hero-overlay"></div>
+                </div>
+                
+                <div class="hero-content">
+                    <div class="hero-sphere-container">
+                        <div id="hero-sphere-3d"></div>
+                    </div>
+                    
+                    <div class="hero-text-content">
+                        <div class="hero-badge fade-in">
+                            <i class="fas fa-certificate"></i>
+                            <span>40+ Certifications · Google Developers Launchpad</span>
+                        </div>
+                        
+                        <h1 class="hero-title typing-text">
+                            <span class="title-line">မိုးကျော်အောင် · Moe Kyaw Aung</span>
+                            <span class="title-line highlight">Senior Android Developer</span>
+                            <span class="title-line subtitle">Tachileik, Myanmar 🇲🇲 ↔ Bangkok, Thailand 🇹🇭</span>
+                        </h1>
+                        
+                        <p class="hero-description">
+                            Passionate and self-motivated developer focused on building responsive, modern, 
+                            and user-friendly mobile experiences. Specializing in Kotlin, Jetpack Compose, 
+                            Clean Architecture, and AI integration.
+                        </p>
+                        
+                        <div class="hero-languages">
+                            <span class="lang-badge">Burmese 🇲🇲</span>
+                            <span class="lang-badge">English 🌐</span>
+                            <span class="lang-badge">Kotlin ☕</span>
+                        </div>
+                        
+                        <div class="hero-focus-areas">
+                            <div class="focus-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <div>
+                                    <strong>Mobile</strong>
+                                    <span>Kotlin · Jetpack Compose · MVVM · Clean Arch</span>
+                                </div>
+                            </div>
+                            <div class="focus-item">
+                                <i class="fas fa-cloud"></i>
+                                <div>
+                                    <strong>Backend</strong>
+                                    <span>Firebase · REST APIs · Python</span>
+                                </div>
+                            </div>
+                            <div class="focus-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <div>
+                                    <strong>Security</strong>
+                                    <span>Ethical Hacking · Cybersecurity</span>
+                                </div>
+                            </div>
+                            <div class="focus-item">
+                                <i class="fas fa-brain"></i>
+                                <div>
+                                    <strong>AI / ML</strong>
+                                    <span>Claude API · TFLite · On-Device ML</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="551">0</div>
+                                <div class="stat-label">GitHub Repos</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="82">0</div>
+                                <div class="stat-label">Certificates</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="100">0</div>
+                                <div class="stat-label">Projects</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="12">0</div>
+                                <div class="stat-label">Years Exp</div>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-cta">
+                            <a href="#projects" class="btn-primary btn-glow">
+                                <i class="fas fa-rocket"></i>
+                                View Projects
+                            </a>
+                            <a href="#contact" class="btn-secondary">
+                                <i class="fas fa-envelope"></i>
+                                Contact Me
+                            </a>
+                            <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="btn-icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/moe-kyaw-aung-2653093a1" target="_blank" class="btn-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="currently-building">
+                            <i class="fas fa-hammer"></i>
+                            <strong>Currently Building:</strong>
+                            <span>MoekyawTranslator — AI Translation App</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-scroll-indicator">
+                    <div class="scroll-mouse">
+                        <div class="scroll-wheel"></div>
+                    </div>
+                    <span>Scroll to Explore</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 2: ABOUT - Holographic Profile -->
+        <section id="about" class="section about-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-label">About</div>
+                    <h2 class="section-title">Developer by Passion,<br/>Learner by Nature</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-profile-card">
+                        <div class="profile-image-container">
+                            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778527878/IMG_20260430_053105_uef0yr.png" 
+                                 alt="Moe Kyaw Aung" 
+                                 class="profile-image">
+                            <div class="profile-glow"></div>
+                        </div>
+                        
+                        <div class="profile-info">
+                            <h3>မိုးကျော်အောင် · Moe Kyaw Aung</h3>
+                            <p class="profile-title">Senior Android Developer</p>
+                            
+                            <div class="profile-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Tachileik, Myanmar 🇲🇲</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>Microsoft · Senior Android Developer</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>Google Developers Launchpad</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-code"></i>
+                                    <span>12+ Years Experience</span>
+                                </div>
+                            </div>
+                            
+                            <div class="profile-philosophy">
+                                <i class="fas fa-quote-left"></i>
+                                <p>Code with culture. Build with purpose.</p>
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-content">
+                        <div class="about-text-block">
+                            <p>
+                                I am a passionate and self-motivated developer who believes in continuous 
+                                learning and growth. From web development to mobile apps, databases to AI — 
+                                I consistently expand my skill set across the full technology spectrum.
+                            </p>
+                            <p>
+                                My certification portfolio demonstrates practical, structured learning across 
+                                9 major domains and over 82 technical subjects — from programming languages 
+                                and web frameworks to machine learning, blockchain, and cybersecurity.
+                            </p>
+                            <p>
+                                I build with intention: clean code, modern practices, and a genuine love 
+                                for problem-solving. Currently focused on creating production-ready Android 
+                                applications with Kotlin, Jetpack Compose, and Clean Architecture.
+                            </p>
+                        </div>
+                        
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Senior-level Android development expertise</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Clean Architecture & MVVM/MVI patterns</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Firebase & REST API integration specialist</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>CI/CD pipeline automation (GitHub Actions, Azure DevOps)</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>AI/ML integration (Claude API, TFLite, On-Device ML)</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Cybersecurity & Ethical Hacking knowledge</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 3: SKILLS MATRIX - 3D Sphere Visualization -->
+        <section id="skills" class="section skills-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-label">Skills</div>
+                    <h2 class="section-title">Technical Expertise & Technologies</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="skills-3d-container">
+                    <div id="skills-sphere-3d"></div>
+                </div>
+                
+                <div class="skills-matrix-grid">
+                    <!-- Android / Mobile -->
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>Android / Mobile</h3>
+                        </div>
+                        <div class="skill-chips">
+                            <span class="skill-chip level-expert">Kotlin</span>
+                            <span class="skill-chip level-expert">Jetpack Compose</span>
+                            <span class="skill-chip level-expert">Android SDK</span>
+                            <span class="skill-chip level-advanced">Android Studio</span>
+                            <span class="skill-chip level-advanced">Material 3</span>
+                            <span class="skill-chip level-advanced">Coroutines</span>
+                            <span class="skill-chip level-advanced">Flow</span>
+                            <span class="skill-chip level-intermediate">Flutter</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%"></div>
+                            </div>
+                            <span class="progress-label">95% Expertise</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Architecture & Patterns -->
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <i class="fas fa-sitemap"></i>
+                            <h3>Architecture & Patterns</h3>
+                        </div>
+                        <div class="skill-chips">
+                            <span class="skill-chip level-expert">Clean Architecture</span>
+                            <span class="skill-chip level-expert">MVVM</span>
+                            <span class="skill-chip level-expert">MVI</span>
+                            <span class="skill-chip level-advanced">SOLID Principles</span>
+                            <span class="skill-chip level-advanced">OOP</span>
+                            <span class="skill-chip level-advanced">Multi-module</span>
+                            <span class="skill-chip level-intermediate">Microservices</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92%"></div>
+                            </div>
+                            <span class="progress-label">92% Expertise</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Backend & Cloud -->
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <i class="fas fa-cloud"></i>
+                            <h3>Backend & Cloud</h3>
+                        </div>
+                        <div class="skill-chips">
+                            <span class="skill-chip level-expert">Firebase</span>
+                            <span class="skill-chip level-expert">REST APIs</span>
+                            <span class="skill-chip level-advanced">Retrofit</span>
+                            <span class="skill-chip level-advanced">Room DB</span>
+                            <span class="skill-chip level-advanced">OkHttp</span>
+                            <span class="skill-chip level-intermediate">AWS</span>
+                            <span class="skill-chip level-intermediate">Azure</span>
+                            <span class="skill-chip level-intermediate">Python</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 88%"></div>
+                            </div>
+                            <span class="progress-label">88% Expertise</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Web Development -->
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <i class="fas fa-globe"></i>
+                            <h3>Web Development</h3>
+                        </div>
+                        <div class="skill-chips">
+                            <span class="skill-chip level-advanced">React</span>
+                            <span class="skill-chip level-advanced">Next.js 15</span>
+                            <span class="skill-chip level-advanced">TypeScript</span>
+                            <span class="skill-chip level-advanced">JavaScript</span>
+                            <span class="skill-chip level-advanced">Tailwind CSS</span>
+                            <span class="skill-chip level-intermediate">HTML5</span>
+                            <span class="skill-chip level-intermediate">CSS3</span>
+                            <span class="skill-chip level-intermediate">Node.js</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                            <span class="progress-label">85% Expertise</span>
+                        </div>
+                    </div>
+                    
+                    <!-- AI / ML -->
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <i class="fas fa-brain"></i>
+                            <h3>AI / Machine Learning</h3>
+                        </div>
+                        <div class="skill-chips">
+                            <span class="skill-chip level-advanced">Claude API</span>
+                            <span class="skill-chip level-advanced">TFLite</span>
+                            <span class="skill-chip level-intermediate">TensorFlow</span>
+                            <span class="skill-chip level-intermediate">On-Device ML</span>
+                            <span class="skill-chip level-intermediate">Python ML</span>
+                            <span class="skill-chip level-beginner">PyTorch</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%"></div>
+                            </div>
+                            <span class="progress-label">78% Expertise</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Cybersecurity -->
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Cybersecurity</h3>
+                        </div>
+                        <div class="skill-chips">
+                            <span class="skill-chip level-advanced">Ethical Hacking</span>
+                            <span class="skill-chip level-advanced">Linux</span>
+                            <span class="skill-chip level-intermediate">Kali Linux</span>
+                            <span class="skill-chip level-intermediate">Network Security</span>
+                            <span class="skill-chip level-intermediate">Penetration Testing</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                            <span class="progress-label">75% Expertise</span>
+                        </div>
+                    </div>
+                    
+                    <!-- DevOps & Tools -->
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <i class="fas fa-tools"></i>
+                            <h3>DevOps & Tools</h3>
+                        </div>
+                        <div class="skill-chips">
+                            <span class="skill-chip level-expert">Git</span>
+                            <span class="skill-chip level-expert">GitHub Actions</span>
+                            <span class="skill-chip level-advanced">Azure DevOps</span>
+                            <span class="skill-chip level-advanced">CI/CD</span>
+                            <span class="skill-chip level-advanced">Gradle</span>
+                            <span class="skill-chip level-intermediate">Docker</span>
+                            <span class="skill-chip level-intermediate">Jenkins</span>
+                            <span class="skill-chip level-intermediate">Fastlane</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                            <span class="progress-label">90% Expertise</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Testing -->
+                    <div class="skill-category-card">
+                        <div class="skill-cat-header">
+                            <i class="fas fa-vial"></i>
+                            <h3>Testing & QA</h3>
+                        </div>
+                        <div class="skill-chips">
+                            <span class="skill-chip level-expert">JUnit 5</span>
+                            <span class="skill-chip level-advanced">Espresso</span>
+                            <span class="skill-chip level-advanced">MockK</span>
+                            <span class="skill-chip level-advanced">Integration Tests</span>
+                            <span class="skill-chip level-intermediate">UI Tests</span>
+                            <span class="skill-chip level-intermediate">Ktor testApplication</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 87%"></div>
+                            </div>
+                            <span class="progress-label">87% Expertise</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 4: ANDROID ROADMAP 2026-2030 -->
+        <section id="android-roadmap" class="section roadmap-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-label">Roadmap</div>
+                    <h2 class="section-title">Android Development Roadmap 2026–2030</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="roadmap-timeline">
+                    <!-- 2026 -->
+                    <div class="roadmap-year year-2026 active">
+                        <div class="year-marker">
+                            <div class="year-circle">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>2026</h3>
+                            <span class="year-theme">Foundation & Mastery</span>
+                        </div>
+                        <div class="year-content">
+                            <div class="roadmap-goals">
+                                <h4>Key Objectives</h4>
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <div>
+                                            <strong>Jetpack Compose Expert</strong>
+                                            <span>Master declarative UI, state management, animations</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <div>
+                                            <strong>Clean Architecture Implementation</strong>
+                                            <span>Production-ready multi-module apps</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <div>
+                                            <strong>Kotlin Coroutines & Flow</strong>
+                                            <span>Advanced async programming patterns</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <div>
+                                            <strong>Firebase Integration</strong>
+                                            <span>Auth, Firestore, Cloud Messaging, Crashlytics</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <div>
+                                            <strong>CI/CD Pipeline Setup</strong>
+                                            <span>GitHub Actions, automated testing & deployment</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="roadmap-milestones">
+                                <h4>Milestones</h4>
+                                <div class="milestone-grid">
+                                    <div class="milestone-card">
+                                        <i class="fas fa-medal"></i>
+                                        <span>Google Developers Launchpad Graduate</span>
+                                    </div>
+                                    <div class="milestone-card">
+                                        <i class="fas fa-certificate"></i>
+                                        <span>40+ Technical Certifications</span>
+                                    </div>
+                                    <div class="milestone-card">
+                                        <i class="fas fa-code-branch"></i>
+                                        <span>551+ GitHub Repositories</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2027 -->
+                    <div class="roadmap-year year-2027">
+                        <div class="year-marker">
+                            <div class="year-circle">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <h3>2027</h3>
+                            <span class="year-theme">Advanced Architecture</span>
+                        </div>
+                        <div class="year-content">
+                            <div class="roadmap-goals">
+                                <h4>Key Objectives</h4>
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <div>
+                                            <strong>Multi-Module Architecture</strong>
+                                            <span>Scalable enterprise-level applications</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <div>
+                                            <strong>Dependency Injection Mastery</strong>
+                                            <span>Hilt, Koin, Dagger advanced patterns</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <div>
+                                            <strong>Performance Optimization</strong>
+                                            <span>Memory management, profiling, benchmarking</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <div>
+                                            <strong>Advanced Testing Strategies</strong>
+                                            <span>Unit, integration, UI, E2E testing</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2028 -->
+                    <div class="roadmap-year year-2028">
+                        <div class="year-marker">
+                            <div class="year-circle">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>2028</h3>
+                            <span class="year-theme">AI/ML Integration</span>
+                        </div>
+                        <div class="year-content">
+                            <div class="roadmap-goals">
+                                <h4>Key Objectives</h4>
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <div>
+                                            <strong>On-Device Machine Learning</strong>
+                                            <span>TFLite, ML Kit, custom models</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <div>
+                                            <strong>AI API Integration</strong>
+                                            <span>Claude, GPT, Gemini APIs</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <div>
+                                            <strong>NLP Features</strong>
+                                            <span>Translation, summarization, chatbots</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2029 -->
+                    <div class="roadmap-year year-2029">
+                        <div class="year-marker">
+                            <div class="year-circle">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </div>
+                            <h3>2029</h3>
+                            <span class="year-theme">Cross-Platform & Web</span>
+                        </div>
+                        <div class="year-content">
+                            <div class="roadmap-goals">
+                                <h4>Key Objectives</h4>
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <div>
+                                            <strong>Kotlin Multiplatform</strong>
+                                            <span>Shared code across Android, iOS, Web</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <div>
+                                            <strong>Compose Multiplatform</strong>
+                                            <span>Unified UI across platforms</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <div>
+                                            <strong>Full-Stack Development</strong>
+                                            <span>Next.js, Ktor, cloud services</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2030 -->
+                    <div class="roadmap-year year-2030">
+                        <div class="year-marker">
+                            <div class="year-circle">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <h3>2030</h3>
+                            <span class="year-theme">Senior Architect Level</span>
+                        </div>
+                        <div class="year-content">
+                            <div class="roadmap-goals">
+                                <h4>Key Objectives</h4>
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <div>
+                                            <strong>System Design Expertise</strong>
+                                            <span>Large-scale distributed systems</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <div>
+                                            <strong>Technical Leadership</strong>
+                                            <span>Mentoring, architecture decisions</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <div>
+                                            <strong>Open Source Contributions</strong>
+                                            <span>Major library contributions, maintainer</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-arrow-right"></i>
+                                        <div>
+                                            <strong>Conference Speaking</strong>
+                                            <span>DroidCon, Google I/O, tech talks</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 5: COMPOSE HOLOGRAMS -->
+        <section id="compose" class="section compose-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-label">Compose</div>
+                    <h2 class="section-title">Jetpack Compose Holograms</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="compose-showcase">
+                    <div class="compose-demo-container">
+                        <div class="compose-code-preview">
+                            <h4><i class="fas fa-code"></i> Compose Code Example</h4>
+                            <pre><code class="language-kotlin">
+@Composable
+fun HolographicCard(
+    title: String,
+    description: String,
+    modifier: Modifier = Modifier
+) {
+    Box(
+        modifier = modifier
+            .background(
+                brush = Brush.linearGradient(
+                    colors = listOf(
+                        Color(0x4000FFFF),
+                        Color(0x40FF00FF)
+                    )
+                )
+            )
+            .clip(RoundedCornerShape(16.dp))
+            .padding(24.dp)
+    ) {
+        Column {
+            Text(
+                text = title,
+                style = MaterialTheme.typography.h6,
+                color = Color.Cyan
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = description,
+                style = MaterialTheme.typography.body1,
+                color = Color.White
+            )
+        }
+    }
+}
+                            </code></pre>
+                        </div>
+                        
+                        <div class="compose-live-preview">
+                            <h4><i class="fas fa-eye"></i> Live Preview</h4>
+                            <div class="hologram-card-demo">
+                                <div class="hologram-card">
+                                    <h3>Jetpack Compose</h3>
+                                    <p>Modern declarative UI toolkit for Android</p>
+                                    <div class="hologram-glow"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="compose-features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-bolt"></i>
+                            <h4>Declarative UI</h4>
+                            <p>Describe your UI state and let Compose handle the rendering</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-sync-alt"></i>
+                            <h4>State Management</h4>
+                            <p>Automatic UI updates with StateFlow and LiveData</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-magic"></i>
+                            <h4>Animations</h4>
+                            <p>Smooth transitions and gesture-based interactions</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <h4>Reusable Components</h4>
+                            <p>Composable functions for modular UI building</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Material 3</h4>
+                            <p>Latest Material Design components and theming</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-layer-group"></i>
+                            <h4>Navigation</h4>
+                            <p>Type-safe navigation with Compose Navigation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 6: ARCHITECTURE SPHERES -->
+        <section id="architecture" class="section architecture-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-label">Architecture</div>
+                    <h2 class="section-title">Clean Architecture Spheres</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="architecture-diagram">
+                    <div class="arch-sphere-container">
+                        <div class="arch-sphere layer-presentation">
+                            <div class="sphere-label">Presentation Layer</div>
+                            <div class="sphere-content">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>UI / Compose</span>
+                                <span>ViewModel</span>
+                                <span>State</span>
+                            </div>
+                        </div>
+                        
+                        <div class="arch-sphere layer-domain">
+                            <div class="sphere-label">Domain Layer</div>
+                            <div class="sphere-content">
+                                <i class="fas fa-cubes"></i>
+                                <span>Use Cases</span>
+                                <span>Business Logic</span>
+                                <span>Entities</span>
+                            </div>
+                        </div>
+                        
+                        <div class="arch-sphere layer-data">
+                            <div class="sphere-label">Data Layer</div>
+                            <div class="sphere-content">
+                                <i class="fas fa-database"></i>
+                                <span>Repositories</span>
+                                <span>Data Sources</span>
+                                <span>Models</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="architecture-explanation">
+                        <h4>Clean Architecture Principles</h4>
+                        <div class="arch-principles">
+                            <div class="principle-item">
+                                <i class="fas fa-check"></i>
+                                <div>
+                                    <strong>Separation of Concerns</strong>
+                                    <span>Each layer has a single responsibility</span>
+                                </div>
+                            </div>
+                            <div class="principle-item">
+                                <i class="fas fa-check"></i>
+                                <div>
+                                    <strong>Dependency Rule</strong>
+                                    <span>Dependencies point inward only</span>
+                                </div>
+                            </div>
+                            <div class="principle-item">
+                                <i class="fas fa-check"></i>
+                                <div>
+                                    <strong>Testability</strong>
+                                    <span>Each layer can be tested independently</span>
+                                </div>
+                            </div>
+                            <div class="principle-item">
+                                <i class="fas fa-check"></i>
+                                <div>
+                                    <strong>Maintainability</strong>
+                                    <span>Changes in one layer don't affect others</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 7: PROJECT GALAXY -->
+        <section id="projects" class="section projects-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-label">Projects</div>
+                    <h2 class="section-title">Project Galaxy</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="android">Android</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="ai">AI/ML</button>
+                    <button class="filter-btn" data-filter="game">Games</button>
+                    <button class="filter-btn" data-filter="pos">POS Systems</button>
+                </div>
+                
+                <div class="project-galaxy-grid">
+                    <!-- Project 1: Social Dashboard -->
+                    <div class="project-card" data-category="android">
+                        <div class="project-image">
+                            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778747388/image-1_1_khsx9s.png" alt="Social Dashboard">
+                            <div class="project-overlay">
+                                <a href="https://github.com/moekyawaung-tech/social-dashboard" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <button class="project-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>📱 Social Dashboard</h3>
+                            <p>Advanced social media analytics dashboard with real-time data visualization</p>
+                            <div class="project-tech">
+                                <span>Kotlin</span>
+                                <span>Jetpack Compose</span>
+                                <span>Firebase</span>
+                            </div>
+                            <div class="project-stats">
+                                <span><i class="fas fa-star"></i> Featured</span>
+                                <span><i class="fas fa-code-branch"></i> 12</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2: PWA App -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763535/MKA_25_lbx6fb.webp" alt="PWA App">
+                            <div class="project-overlay">
+                                <a href="https://github.com/moekyawaung-tech/pwa-app" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <button class="project-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>🌐 PWA App</h3>
+                            <p>Progressive Web App with offline support and push notifications</p>
+                            <div class="project-tech">
+                                <span>Next.js 15</span>
+                                <span>React</span>
+                                <span>Tailwind CSS</span>
+                            </div>
+                            <div class="project-stats">
+                                <span><i class="fas fa-download"></i> PWA</span>
+                                <span><i class="fas fa-bolt"></i> Fast</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3: Video Player -->
+                    <div class="project-card" data-category="android">
+                        <div class="project-image">
+                            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763531/MKA_12_iv8kpm.webp" alt="Video Player">
+                            <div class="project-overlay">
+                                <a href="https://github.com/moekyawaung-tech/video-player" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <button class="project-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>🎯 Video Player</h3>
+                            <p>Advanced video player with ExoPlayer, custom controls, and playlist support</p>
+                            <div class="project-tech">
+                                <span>Kotlin</span>
+                                <span>ExoPlayer</span>
+                                <span>Material 3</span>
+                            </div>
+                            <div class="project-stats">
+                                <span><i class="fas fa-play"></i> Media</span>
+                                <span><i class="fas fa-heart"></i> Premium</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4: Game Collection -->
+                    <div class="project-card" data-category="game">
+                        <div class="project-image">
+                            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795847/copilot_image_1778795115579_acfm5j.png" alt="Game Collection">
+                            <div class="project-overlay">
+                                <a href="https://github.com/moekyawaung-tech/game-collection" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <button class="project-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>🎮 Game Collection</h3>
+                            <p>Multiple games including Snake, with modern UI and animations</p>
+                            <div class="project-tech">
+                                <span>Kotlin</span>
+                                <span>Jetpack Compose</span>
+                                <span>Canvas</span>
+                            </div>
+                            <div class="project-stats">
+                                <span><i class="fas fa-gamepad"></i> Fun</span>
+                                <span><i class="fas fa-mobile"></i> Mobile</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 5: POS Systems -->
+                    <div class="project-card" data-category="pos">
+                        <div class="project-image">
+                            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795822/preview_dzhqvv.webp" alt="POS Ultimate Pro Max">
+                            <div class="project-overlay">
+                                <a href="https://github.com/moekyawaung-tech/POS-Ultimate-Pro-Max" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <button class="project-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>💼 POS Ultimate Pro Max</h3>
+                            <p>Enterprise-grade Point of Sale system with inventory, reporting, and multi-user support</p>
+                            <div class="project-tech">
+                                <span>Kotlin</span>
+                                <span>Room DB</span>
+                                <span>Firebase</span>
+                            </div>
+                            <div class="project-stats">
+                                <span><i class="fas fa-crown"></i> Ultimate</span>
+                                <span><i class="fas fa-chart-line"></i> Pro</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 6: Weather App -->
+                    <div class="project-card" data-category="android">
+                        <div class="project-image">
+                            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778747384/image-1_f6zlmk.jpg" alt="Weather App">
+                            <div class="project-overlay">
+                                <a href="https://github.com/moekyawaung-tech/Weather-app" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <button class="project-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>🌤️ Weather App</h3>
+                            <p>Real-time weather forecasting with location-based updates and beautiful UI</p>
+                            <div class="project-tech">
+                                <span>Kotlin</span>
+                                <span>Retrofit</span>
+                                <span>OpenWeather API</span>
+                            </div>
+                            <div class="project-stats">
+                                <span><i class="fas fa-cloud-sun"></i> Weather</span>
+                                <span><i class="fas fa-location-arrow"></i> GPS</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 7: Job Portal -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778747384/image_1_buwgls.png" alt="Job Portal">
+                            <div class="project-overlay">
+                                <a href="https://github.com/moekyawaung-tech/Job-Portal-App" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <button class="project-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>💼 Job Portal App</h3>
+                            <p>Full-stack job search platform with applications, resumes, and employer dashboard</p>
+                            <div class="project-tech">
+                                <span>Next.js</span>
+                                <span>React</span>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="project-stats">
+                                <span><i class="fas fa-briefcase"></i> Jobs</span>
+                                <span><i class="fas fa-users"></i> Multi-role</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 8: AI Translator -->
+                    <div class="project-card" data-category="ai">
+                        <div class="project-image">
+                            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795856/copilot_image_1778795675037_heh9xk.png" alt="AI Translator">
+                            <div class="project-overlay">
+                                <a href="https://github.com/Dev-moe-kyawaung/moekyawtranslator" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <button class="project-view">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>🤖 MoekyawTranslator</h3>
+                            <p>AI-powered translation app with Claude API integration and offline support</p>
+                            <div class="project-tech">
+                                <span>Kotlin</span>
+                                <span>Claude API</span>
+                                <span>TFLite</span>
+                            </div>
+                            <div class="project-stats">
+                                <span><i class="fas fa-brain"></i> AI</span>
+                                <span><i class="fas fa-language"></i> Multi-lang</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="view-more-projects">
+                    <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="btn-primary">
+                        <i class="fab fa-github"></i>
+                        View All 551+ Repositories
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 8: AI ASSISTANT -->
+        <section id="ai-assistant" class="section ai-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-label">AI Assistant</div>
+                    <h2 class="section-title">AI-Powered Chat Assistant</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="ai-chat-container">
+                    <div class="chat-window" id="chat-window">
+                        <div class="chat-messages" id="chat-messages">
+                            <!-- Welcome Message -->
+                            <div class="message bot-message">
+                                <div class="message-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="message-content">
+                                    <div class="message-header">
+                                        <strong>AI Assistant</strong>
+                                        <span class="message-time">Now</span>
+                                    </div>
+                                    <div class="message-text">
+                                        Hello! I'm Moe Kyaw Aung's AI assistant. I can help you learn about:
+                                        <ul>
+                                            <li>📱 Android development expertise</li>
+                                            <li>🛠️ Technical skills and projects</li>
+                                            <li>📜 Certifications and achievements</li>
+                                            <li>💼 Professional experience</li>
+                                            <li>🌐 Contact information</li>
+                                        </ul>
+                                        What would you like to know?
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-input-container">
+                            <input 
+                                type="text" 
+                                id="chat-input" 
+                                class="chat-input" 
+                                placeholder="Ask me anything..."
+                                autocomplete="off"
+                            >
+                            <button id="chat-send" class="chat-send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-quick-questions">
+                        <h4>Quick Questions</h4>
+                        <div class="quick-questions-grid">
+                            <button class="quick-question" data-question="What are your main skills?">
+                                <i class="fas fa-code"></i>
+                                <span>Main Skills?</span>
+                            </button>
+                            <button class="quick-question" data-question="Tell me about your projects">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>Projects?</span>
+                            </button>
+                            <button class="quick-question" data-question="How can I contact you?">
+                                <i class="fas fa-envelope"></i>
+                                <span>Contact Info?</span>
+                            </button>
+                            <button class="quick-question" data-question="What's your experience level?">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Experience?</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 9: CERTIFICATES -->
+        <section id="certificates" class="section certificates-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-label">Credentials</div>
+                    <h2 class="section-title">82+ Professional Certificates</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="cert-search-wrap">
+                    <i class="fas fa-search"></i>
+                    <input 
+                        type="text" 
+                        id="cert-search" 
+                        class="cert-search" 
+                        placeholder="Search certificates..."
+                    >
+                </div>
+                
+                <div class="cert-filter-tabs">
+                    <button class="filter-tab active" data-category="all">
+                        All (82)
+                    </button>
+                    <button class="filter-tab" data-category="programming">
+                        ⌨️ Programming (13)
+                    </button>
+                    <button class="filter-tab" data-category="web">
+                        🌐 Web Dev (13)
+                    </button>
+                    <button class="filter-tab" data-category="mobile">
+                        📱 Mobile (7)
+                    </button>
+                    <button class="filter-tab" data-category="databases">
+                        🗄️ Databases (6)
+                    </button>
+                    <button class="filter-tab" data-category="ai">
+                        🤖 AI/ML (11)
+                    </button>
+                    <button class="filter-tab" data-category="security">
+                        🔐 Security (10)
+                    </button>
+                    <button class="filter-tab" data-category="blockchain">
+                        ⛓️ Blockchain (4)
+                    </button>
+                    <button class="filter-tab" data-category="business">
+                        📈 Business (11)
+                    </button>
+                </div>
+                
+                <div class="certificates-grid" id="certificates-grid">
+                    <!-- Sample Certificate Cards -->
+                    <div class="cert-card" data-category="programming">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>C Programming</h4>
+                            <p class="cert-date">📅 Jul 4, 2024</p>
+                            <p class="cert-id">ID: 1720080366600</p>
+                        </div>
+                        <a href="https://www.programminghub.io/certificate?id=1720080366600" target="_blank" class="cert-verify">
+                            <i class="fas fa-check-circle"></i>
+                            Verify
+                        </a>
+                    </div>
+                    
+                    <div class="cert-card" data-category="programming">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>Kotlin Programming</h4>
+                            <p class="cert-date">📅 Aug 15, 2024</p>
+                            <p class="cert-id">ID: 1723737600000</p>
+                        </div>
+                        <a href="https://www.programminghub.io/certificate" target="_blank" class="cert-verify">
+                            <i class="fas fa-check-circle"></i>
+                            Verify
+                        </a>
+                    </div>
+                    
+                    <div class="cert-card" data-category="mobile">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>Android Development</h4>
+                            <p class="cert-date">📅 Sep 10, 2024</p>
+                            <p class="cert-id">ID: 1725926400000</p>
+                        </div>
+                        <a href="https://www.programminghub.io/certificate" target="_blank" class="cert-verify">
+                            <i class="fas fa-check-circle"></i>
+                            Verify
+                        </a>
+                    </div>
+                    
+                    <div class="cert-card" data-category="web">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>React Development</h4>
+                            <p class="cert-date">📅 Oct 5, 2024</p>
+                            <p class="cert-id">ID: 1728086400000</p>
+                        </div>
+                        <a href="https://www.programminghub.io/certificate" target="_blank" class="cert-verify">
+                            <i class="fas fa-check-circle"></i>
+                            Verify
+                        </a>
+                    </div>
+                    
+                    <div class="cert-card" data-category="ai">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>Machine Learning</h4>
+                            <p class="cert-date">📅 Nov 20, 2024</p>
+                            <p class="cert-id">ID: 1732060800000</p>
+                        </div>
+                        <a href="https://www.programminghub.io/certificate" target="_blank" class="cert-verify">
+                            <i class="fas fa-check-circle"></i>
+                            Verify
+                        </a>
+                    </div>
+                    
+                    <div class="cert-card" data-category="security">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>Cybersecurity Fundamentals</h4>
+                            <p class="cert-date">📅 Dec 1, 2024</p>
+                            <p class="cert-id">ID: 1733011200000</p>
+                        </div>
+                        <a href="https://www.programminghub.io/certificate" target="_blank" class="cert-verify">
+                            <i class="fas fa-check-circle"></i>
+                            Verify
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 10: CONTACT -->
+        <section id="contact" class="section contact-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-label">Contact</div>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Let's Work Together</h3>
+                        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <div class="email-list">
+                                        <span>moekyawaung@programmer.net</span>
+                                        <span>moekyawaung@technologist.com</span>
+                                        <span>moekyawaung@engineer.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone</strong>
+                                    <span>+95 9 889 000 889</span>
+                                    <span>+95 9 666 000 050</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Location</strong>
+                                    <span>Tachileik, Myanmar 🇲🇲</span>
+                                    <span>Bangkok, Thailand 🇹🇭</span>
+                                </div>
+                            </
